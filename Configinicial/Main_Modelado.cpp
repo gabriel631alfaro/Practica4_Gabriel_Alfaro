@@ -212,21 +212,21 @@ int main() {
 		//patas de la mesa 2
 		model = glm::mat4(1.0f);
 		model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
-		model = glm::translate(model, glm::vec3(-3.0f, -0.45f, -0.2f));
+		model = glm::translate(model, glm::vec3(-3.0f, -0.45f, -1.2f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
-		////patas de la mesa 3
-		//model = glm::mat4(1.0f);
-		//model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
-		//model = glm::translate(model, glm::vec3(3.0f, -0.45f, 0.2f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glDrawArrays(GL_TRIANGLES, 0, 36);
-		////patas de la mesa 4
-		//model = glm::mat4(1.0f);
-		//model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
-		//model = glm::translate(model, glm::vec3(3.0f, -0.45f, 0.2f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//glDrawArrays(GL_TRIANGLES, 0, 36);
+		//patas de la mesa 3
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
+		model = glm::translate(model, glm::vec3(3.0f, -0.45f, -1.2f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		//patas de la mesa 4
+		model = glm::mat4(1.0f);
+		model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
+		model = glm::translate(model, glm::vec3(-3.0f, -0.45f, 1.2f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		glBindVertexArray(0);
 
