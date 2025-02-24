@@ -1,3 +1,11 @@
+/*
+Practica4. Modelado Geometrico            Alfaro Fragoso José Gabriel                          
+ 
+Fecha de entrega: algún día                       317019450
+
+*/
+
+
 #include<iostream>
 
 //#define GLEW_STATIC
@@ -34,7 +42,7 @@ int main() {
 
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Modelado geometrico. Gabriel Alfaro", nullptr, nullptr);
+	GLFWwindow *window = glfwCreateWindow(WIDTH, HEIGHT, "Practica 04. Gabriel Alfaro", nullptr, nullptr);
 
 	int screenWidth, screenHeight;
 
@@ -196,37 +204,41 @@ int main() {
 	
 
 		glBindVertexArray(VAO);
+
+		//Tortuga 
+
+		//Caparason parte baja 
 	
 	    model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(2.5f, 0.25f, 1.5f)); //ancho grosor profundidad
-		model = glm::translate(model, glm::vec3(0.0f,0.75f,0.0f));
+		model = glm::scale(model, glm::vec3(1.4f,0.8f , 1.2f)); //ancho alto profundidad
+		model = glm::translate(model, glm::vec3(0.0f,0.0f,0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 		
-		//patas de la mesa 1
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
-		model = glm::translate(model, glm::vec3(3.0f, -0.45f, 1.2f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		//patas de la mesa 2
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
-		model = glm::translate(model, glm::vec3(-3.0f, -0.45f, -1.2f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		//patas de la mesa 3
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
-		model = glm::translate(model, glm::vec3(3.0f, -0.45f, -1.2f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
-		//patas de la mesa 4
-		model = glm::mat4(1.0f);
-		model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
-		model = glm::translate(model, glm::vec3(-3.0f, -0.45f, 1.2f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glDrawArrays(GL_TRIANGLES, 0, 36);
+		////patas de la mesa 1
+		//model = glm::mat4(1.0f);
+		//model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
+		//model = glm::translate(model, glm::vec3(3.0f, -0.45f, 1.2f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
+		////patas de la mesa 2
+		//model = glm::mat4(1.0f);
+		//model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
+		//model = glm::translate(model, glm::vec3(-3.0f, -0.45f, -1.2f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
+		////patas de la mesa 3
+		//model = glm::mat4(1.0f);
+		//model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
+		//model = glm::translate(model, glm::vec3(3.0f, -0.45f, -1.2f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
+		////patas de la mesa 4
+		//model = glm::mat4(1.0f);
+		//model = glm::scale(model, glm::vec3(0.25f, 1.0f, 0.25f));
+		//model = glm::translate(model, glm::vec3(-3.0f, -0.45f, 1.2f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glDrawArrays(GL_TRIANGLES, 0, 36);
 
 		glBindVertexArray(0);
 
@@ -259,7 +271,7 @@ int main() {
 		 movZ += 0.02f;
 	 if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
 		 rot += 0.1f;
-	 if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+	 if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) // delta time 
 		 rot -= 0.1f;
  }
 
